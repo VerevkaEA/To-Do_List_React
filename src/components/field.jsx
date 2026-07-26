@@ -4,6 +4,7 @@ className='',
 id,
 label,
 type='text',
+onInput,
 }=props
 
     return (
@@ -20,6 +21,7 @@ type='text',
                 placeholder=" "
                 autoComplete="off"
                 type={type}
+                onInput={onInput}
             />
         </div>
     )

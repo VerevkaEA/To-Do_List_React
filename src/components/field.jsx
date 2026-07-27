@@ -5,6 +5,7 @@ id,
 label,
 type='text',
 onInput,
+value,
 }=props
 
     return (
@@ -22,6 +23,7 @@ onInput,
                 autoComplete="off"
                 type={type}
                 onInput={onInput}
+                value={value}
             />
         </div>
     )

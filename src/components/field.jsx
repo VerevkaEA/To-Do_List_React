@@ -6,6 +6,7 @@ label,
 type='text',
 onInput,
 value,
+ref,
 }=props
 
     return (
@@ -24,6 +25,7 @@ value,
                 type={type}
                 onInput={onInput}
                 value={value}
+                ref={ref}
             />
         </div>
     )

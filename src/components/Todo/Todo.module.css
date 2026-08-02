@@ -53,7 +53,7 @@
   }
 }
 
-.todo__list {
+.list {
   --todoListRowGap: 8px;
 
   display: grid;

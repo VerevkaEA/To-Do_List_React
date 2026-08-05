@@ -1,7 +1,8 @@
-import { memo, useContext} from 'react'
+import { memo, useContext } from 'react'
 import { TasksContext } from "@/entities/todo"
 import RouterLink from '@/shared/components/RouterLink'
 import styles from './TodoItem.module.css'
+import { highlightCaseInsensitive } from '../../../../shared/utils/highlight'
 
 const TodoItem = (props) => {
   const {
@@ -18,10 +19,13 @@ const TodoItem = (props) => {
     toggleTaskComplete,
     disappearingTaskId,
     appearingTaskId,
+    searchQuery,
   } = useContext(TasksContext)
 
+  const highLightedTitle = highlightCaseInsensitive(title, searchQuery)
+
   return (
-    <li className={`${styles.todoItem} ${className} ${disappearingTaskId===id?styles.isDisappearing:''} ${appearingTaskId===id?styles.isAppearing:''}`}
+    <li className={`${styles.todoItem} ${className} ${disappearingTaskId === id ? styles.isDisappearing : ''} ${appearingTaskId === id ? styles.isAppearing : ''}`}
       ref={id === firstIncompleteTaskId ? firstIncompleteTaskRef : null}>
       <input
         className={styles.checkbox}
@@ -37,13 +41,14 @@ const TodoItem = (props) => {
         {title}
       </label>
       <RouterLink to={`/tasks/${id}`} aria-label="Task detail page">
-        {title}
+      
+        {<span dangerouslySetInnerHTML={{ __html: highLightedTitle }} />}
       </RouterLink>
       <button
         className={styles.deleteButton}
         aria-label="Delete"
         title="Delete"
-        onClick={()=>deleteTask(id)}
+        onClick={() => deleteTask(id)}
       >
         <svg
           width="20"

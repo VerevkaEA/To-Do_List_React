@@ -1,1 +1,1 @@
-{tasks:[{title:'первая',isDone:false,id:'U5ZXf3DFmcc'},{title:'вторая',isDone:false,id:'QTRp9H47P-o'},{title:'третья',isDone:false,id:'Q6bGgSpuanY'},{title:'<img>',isDone:false,id:'18Mftk-2kKc'}],$schema:'./node_modules/json-server/schema.json'}
+{tasks:[],$schema:'./node_modules/json-server/schema.json'}
